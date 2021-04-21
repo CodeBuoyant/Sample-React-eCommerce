@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 import FormInput from '../form-input/form-input.component';
@@ -14,20 +15,20 @@ class SignIn extends React.Component {
       this.state = {
          email: '',
          password: ''
-      }
+      };
    }
 
    handleSubmit = event => {
       event.preventDefault();
 
       this.setState({ email: '', password: '' });
-   }
+   };
 
    handleChange = event => {
       const { value, name } = event.target;
 
       this.setState({ [name]: value });
-   }
+   };
 
    render() {
       return (
@@ -37,33 +38,30 @@ class SignIn extends React.Component {
 
             <form onSubmit={this.handleSubmit}>
                <FormInput
-                  name="email"
-                  type="email"
+                  name='email'
+                  type='email'
                   handleChange={this.handleChange}
                   value={this.state.email}
-                  label="email"
+                  label='email'
                   required
                />
-
                <FormInput
-                  name="password"
-                  type="password"
-                  handleChange={this.handleChange}
+                  name='password'
+                  type='password'
                   value={this.state.password}
-                  label="password"
+                  handleChange={this.handleChange}
+                  label='password'
                   required
                />
-
                <div className='buttons'>
-                  <CustomButton type="submit">sign In</CustomButton>
+                  <CustomButton type='submit'> Sign in </CustomButton>
                   <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
-                     {' '}
-                  Sign in with Google{' '}
-                  </CustomButton>
+                     Sign in with Google
+            </CustomButton>
                </div>
             </form>
          </div>
-      )
+      );
    }
 }
 
